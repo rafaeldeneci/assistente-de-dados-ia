@@ -57,17 +57,6 @@ def consultar_banco_dados(filtro: dict) -> list:
     return resultado
   
 
-if __name__ == '__main__':
-   print("--- Teste 1: filtro válido ---")
-   resposta = consultar_banco_dados({'cidade': 'Duque de Caxias', 'plano': 'premium'})
-   print(f"Resultado: {resposta}")
-
-   print("\n--- Teste 2: coluna inválida ---")
-
-   try: consultar_banco_dados({'email': 'x@x.com'})
-   except ValueError as erro:
-     print(f'erro capturado {erro}')
-
 colunas_ordenacao_permitidas = {'id_registro',
                                 'nome_completo',
                                 'consumo_gb', 
@@ -120,7 +109,7 @@ def consultar_banco_dados_avancado(filtros: dict = {}, ordenar_por: str = None, 
         query += f' AND {coluna} LIKE ?'
       else:
         query += f' AND {coluna} = ?'
-      valores.append(valor)
+      valores.append(str(valor))
     if ordenar_por in colunas_ordenacao_permitidas:
       query += f' ORDER BY {ordenar_por}'
 
