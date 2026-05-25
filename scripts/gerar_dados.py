@@ -1,8 +1,12 @@
 import csv
 import random
+import os
+
+caminho_absoluto = os.path.abspath(__file__)
+raiz = os.path.dirname(os.path.dirname(caminho_absoluto))
 
 def gerar_massa_dados(
-                      caminho_do_arquivo='data/clientes.csv',
+                      caminho_do_arquivo=os.path.join(raiz,'data','clientes.csv'),
                       primeiro_nome = [
                      'Alan', 'Bia', 'Carlos', 'Diego',
                      'Elena', 'Fabio', 'Gisele', 'Heitor',
@@ -62,6 +66,6 @@ def gerar_massa_dados(
                                      consumo_gb_aleatorio,
                                      status_aleatorio 
                                      ])
+            
+        
 
-if __name__=='__main__':
- gerar_massa_dados()

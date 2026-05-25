@@ -1,10 +1,16 @@
 import sqlite3
 from utils.csv_util import ler_clientes
+import os 
 
 
-def criar_tabela_chamados(clientes='data/clientes.csv', nome_tabela = 'data/chamados.db'):
+caminho_absoluto = os.path.abspath(__file__)
+raiz_projeto = os.path.dirname(os.path.dirname(caminho_absoluto))
+caminho_csv = os.path.join(raiz_projeto, 'data', 'clientes.csv')
+caminho_ao_db = os.path.join(raiz_projeto, 'data', 'chamados.db')
+
+def criar_tabela_chamados():
     
-    with sqlite3.connect(nome_tabela) as chamados:
+    with sqlite3.connect(caminho_ao_db) as chamados:
         cursor = chamados.cursor()
 
         cursor.execute('''
@@ -34,8 +40,8 @@ def criar_tabela_chamados(clientes='data/clientes.csv', nome_tabela = 'data/cham
           :consumo_gb,
           :status)
           '''
-        cursor.executemany(query_de_insercao, ler_clientes(clientes))
+        cursor.executemany(query_de_insercao, ler_clientes())
         chamados.commit()
     
-if __name__=='__main__':
- criar_tabela_chamados('data/clientes.csv')
+
+
