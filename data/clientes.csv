@@ -1,51 +1,51 @@
 nome_completo,plano,cidade,consumo_gb,status
-Carlos Castro,premium,Uberlândia,406,inativo
-Igor Gomes,plus,Guarulhos,375,inativo
-Mariana Martins,premium,Duque de Caxias,499,ativo
-Carlos Melo,basico,Duque de Caxias,365,ativo
-Carlos Nascimento,plus,Uberlândia,348,ativo
-Sabrina Araujo,basico,Petrópolis,203,ativo
-Natalia Almeida,basico,Ribeirão Preto,493,ativo
-Mariana Carvalho,basico,Petrópolis,264,ativo
-Otavio Pereira,basico,Niterói,310,inativo
-Bia Castro,premium,Uberlândia,67,inativo
-Rafael Ribeiro,plus,Duque de Caxias,214,inativo
-Sabrina Oliveira,basico,Duque de Caxias,281,ativo
-Julia Pinto,basico,Uberlândia,51,ativo
-William Ribeiro,premium,Nova Iguaçu,398,inativo
-Alan Pereira,plus,Contagem,80,inativo
-Kevin Silva,premium,Petrópolis,193,inativo
-Lucas Almeida,premium,Nova Iguaçu,374,inativo
-Lucas Silva,premium,Juiz de Fora,462,inativo
-Patricia Araujo,basico,Nova Iguaçu,403,ativo
-Kevin Souza,plus,Ribeirão Preto,178,inativo
-Larissa Ribeiro,premium,Duque de Caxias,102,inativo
-Igor Silva,basico,Santos,44,inativo
-Fabio Pinto,plus,Uberlândia,412,inativo
-Diego Silva,plus,Juiz de Fora,356,inativo
-Rodrigo Santos,plus,Campinas,209,inativo
-Vanessa Almeida,premium,Nova Iguaçu,182,inativo
-Patricia Teixeira,plus,São Gonçalo,76,inativo
-Igor Costa,plus,Ribeirão Preto,41,inativo
-Tiago Lima,basico,São Gonçalo,120,ativo
-Natalia Melo,premium,Santos,365,inativo
-Bia Araujo,basico,Ribeirão Preto,464,inativo
-Sabrina Pereira,plus,Ribeirão Preto,109,ativo
-Rodrigo Santos,plus,Uberlândia,289,ativo
-Kevin Costa,plus,Ribeirão Preto,437,inativo
-Lucas Santos,premium,Guarulhos,136,ativo
-Fabio Melo,plus,Petrópolis,298,inativo
-Vanessa Castro,basico,Ribeirão Preto,381,inativo
-Natalia Rodrigues,plus,Campinas,324,inativo
-Diego Teixeira,plus,Guarulhos,460,inativo
-Elena Carvalho,basico,Contagem,347,inativo
-Mariana Carvalho,premium,Petrópolis,96,ativo
-Carlos Ribeiro,plus,Nova Iguaçu,154,inativo
-Gisele Melo,plus,Ribeirão Preto,90,inativo
-Carlos Melo,plus,Contagem,73,ativo
-Yasmin Melo,plus,Uberlândia,336,ativo
-Heitor Carvalho,basico,Ribeirão Preto,21,inativo
-Carlos Gomes,plus,Uberlândia,498,ativo
-Fabio Oliveira,basico,Petrópolis,225,inativo
-Natalia Ribeiro,plus,São Gonçalo,345,ativo
-William Martins,premium,Uberlândia,443,inativo
+William Almeida,plus,São Gonçalo,33,ativo
+Mateus Araujo,premium,Campinas,144,inativo
+Sabrina Barbosa,basico,Duque de Caxias,104,ativo
+Otavio Melo,basico,Contagem,210,ativo
+Elena Barbosa,basico,Contagem,64,ativo
+Mariana Silva,premium,São Gonçalo,445,ativo
+Rodrigo Silva,premium,Ribeirão Preto,436,inativo
+Rafael Castro,basico,Guarulhos,208,ativo
+Larissa Lima,plus,Contagem,203,inativo
+Yasmin Melo,basico,Campinas,280,ativo
+Natalia Rodrigues,plus,Juiz de Fora,316,inativo
+Larissa Carvalho,premium,São Gonçalo,272,ativo
+Rodrigo Barbosa,plus,Guarulhos,258,inativo
+Rafael Santos,basico,Duque de Caxias,401,inativo
+Igor Costa,basico,Campinas,181,ativo
+Bia Ribeiro,plus,Duque de Caxias,385,ativo
+Larissa Barbosa,premium,Nova Iguaçu,144,ativo
+William Melo,plus,Niterói,69,inativo
+Heitor Carvalho,basico,São Gonçalo,388,ativo
+Larissa Martins,plus,Santos,136,ativo
+Sabrina Souza,plus,Petrópolis,134,inativo
+Julia Lima,basico,Petrópolis,300,ativo
+Gisele Ribeiro,premium,Uberlândia,383,inativo
+Vanessa Costa,plus,Juiz de Fora,375,ativo
+Kevin Teixeira,basico,Niterói,86,ativo
+Rodrigo Pinto,premium,Petrópolis,280,ativo
+Natalia Pereira,premium,Contagem,307,ativo
+Mateus Souza,premium,São Gonçalo,109,ativo
+Larissa Lima,plus,Juiz de Fora,351,ativo
+Rodrigo Ribeiro,plus,Ribeirão Preto,400,inativo
+Mateus Oliveira,plus,Petrópolis,229,ativo
+Rafael Nascimento,plus,São Gonçalo,338,inativo
+Igor Castro,basico,Niterói,267,ativo
+Rafael Martins,premium,São Gonçalo,377,inativo
+Elena Pereira,basico,Campinas,390,inativo
+Natalia Souza,plus,Duque de Caxias,39,inativo
+Heitor Pinto,basico,Guarulhos,95,ativo
+Lucas Oliveira,premium,Niterói,161,inativo
+Julia Santos,plus,Campinas,226,inativo
+Alan Araujo,basico,Niterói,354,inativo
+Julia Souza,premium,Nova Iguaçu,344,ativo
+Gisele Melo,plus,Ribeirão Preto,121,inativo
+Diego Pereira,plus,Ribeirão Preto,194,ativo
+Otavio Souza,basico,São Gonçalo,471,inativo
+Rafael Santos,plus,São Gonçalo,331,ativo
+Sabrina Almeida,plus,Nova Iguaçu,454,ativo
+Natalia Oliveira,plus,Niterói,195,inativo
+Mateus Araujo,basico,Uberlândia,396,ativo
+Alan Barbosa,premium,Niterói,325,inativo
+Rodrigo Martins,premium,Uberlândia,385,inativo
