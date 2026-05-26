@@ -43,20 +43,26 @@ if 'historico' not in st.session_state:
     st.session_state.historico = []
 if 'session_id' not in st.session_state:
     st.session_state.session_id = "sessão_1"
+if 'processando' not in st.session_state:
+    st.session_state.processando = False 
 
 for mensagem in st.session_state.historico:
     with st.chat_message(mensagem["role"]):
         st.write(mensagem["content"])
 
-prompt = st.chat_input('como poderia te ajudar hoje?')
+prompt = st.chat_input('como poderia te ajudar hoje?',
+disabled=st.session_state.processando
+)
 
 
-if prompt:
-    st.session_state.historico.append({'role':'user', 'content':prompt})
+if prompt and not st.session_state.processando: 
+    st.session_state.processando = True    
+    st.session_state.historico.append({'role': 'user', 'content': prompt})
     with st.chat_message('user'):
         st.write(prompt)
 
-    resposta = asyncio.run(
+    with st.spinner('pensando...'):   
+        resposta = asyncio.run(
         chamar_agente(prompt, st.session_state.session_id)
     )
 
@@ -64,6 +70,7 @@ if prompt:
     with st.chat_message('assistant'):
         st.write(resposta)
 
+    st.session_state.processando = False
 
 
 

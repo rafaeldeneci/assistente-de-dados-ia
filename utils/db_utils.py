@@ -27,7 +27,6 @@ def criar_tabela_chamados():
                        '''
                        )
         query_de_insercao = ''' INSERT INTO chamados(
-          
           nome_completo,
           plano,
           cidade,

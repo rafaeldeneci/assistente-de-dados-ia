@@ -5,9 +5,15 @@ caminho_absoluto = os.path.abspath(__file__)
 raiz_do_projeto = os.path.dirname(os.path.dirname(caminho_absoluto))
 caminho_db = os.path.join(raiz_do_projeto, 'data', 'chamados.db')
 
-colunas_permitidas =  {'nome_completo','plano','cidade','consumo_gb','status'}
+colunas_permitidas =  {'nome_completo',
+                       'plano',
+                       'cidade',
+                       'consumo_gb',
+                       'status'
+                       }
 
 def consultar_banco_dados(filtro: dict) -> list:
+
   '''Busca clientes no banco de dados aplicando filtros exatos.
 
   COLUNAS DISPONÍVEIS E VALORES ACEITOS:
@@ -37,7 +43,9 @@ def consultar_banco_dados(filtro: dict) -> list:
 
   for coluna in filtro:
     if coluna not in colunas_permitidas:
+    
       raise ValueError(
+
         f'coluna "{coluna}" não exite ou não é permitida'
         f'use apenas colunas permitidas: {colunas_permitidas}'
       )
@@ -97,7 +105,8 @@ def consultar_banco_dados_avancado(filtros: dict = {},
 
     Colunas disponíveis para filtros: nome_completo, plano, cidade, consumo_gb, status
     Colunas disponíveis para ordenar_por: id_registro, nome_completo, consumo_gb, cidade, status
-    ex:
+   
+     ex:
     filtros={'nome_completo': 'I%'}, busca_parcial=True
     filtros={'status': 'ativo'}, ordenar_por='id_registro', limite=1
     filtros={'cidade': 'Niterói'}, limite=5
@@ -121,7 +130,7 @@ def consultar_banco_dados_avancado(filtros: dict = {},
       else:
         query += f' AND {coluna} = ?'
       valores.append(str(valor))
-      
+
     if ordenar_por in colunas_ordenacao_permitidas:
       direcao = 'DESC' if ordem.upper() == 'DESC' else 'ASC'
       query += f' ORDER BY {ordenar_por} {direcao}'
