@@ -58,19 +58,23 @@ disabled=st.session_state.processando
 if prompt and not st.session_state.processando: 
     st.session_state.processando = True    
     st.session_state.historico.append({'role': 'user', 'content': prompt})
-    with st.chat_message('user'):
-        st.write(prompt)
+    st.session_state.prompt_pendente = prompt
+    st.rerun()
+
+if st.session_state.processando and  'prompt_pendente' in st.session_state:
 
     with st.spinner('pensando...'):   
         resposta = asyncio.run(
-        chamar_agente(prompt, st.session_state.session_id)
+        chamar_agente(st.session_state.prompt_pendente, st.session_state.session_id)
     )
 
     st.session_state.historico.append({'role':'assistant', 'content':resposta})
     with st.chat_message('assistant'):
         st.write(resposta)
 
+    del st.session_state.prompt_pendente
     st.session_state.processando = False
+    st.rerun()
 
 
 
