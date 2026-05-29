@@ -37,7 +37,7 @@ async def chamar_agente(prompt: str, session_id: str):
 
 
 
-st.title('assistende de busca telecom')
+st.title('Assistente de busca de telecom')
 
 if 'historico' not in st.session_state:
     st.session_state.historico = []
