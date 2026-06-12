@@ -34,6 +34,12 @@ def consultar_banco_dados(filtros: dict = {},
 
     3 - caso o usuario realize uma busca por um cliente especifico, informando o nome completo exato, mantenha a "busca parcial=False"
 
+    REGRA DE FORMATAÇÃO!!!!:
+    PROIBIDO ENVIAR VALORES BOOLEANOS LOGICOS (COMO TRUE OU FALSE) EM NENHUM CAMPO DE FILTRO
+
+    OBRIGATORIO!!!
+    SE A INFORMAÇÃO FOR BINARIA (SIM/NÃO,ATIVO,INATIVO) ENVIE SEMPRE COMO UMA STRING DE TEXTO EM LETRAS MINUSCULAS 
+    EX: 'sim', 'não' , 'ativo', 'inativo'
 
     COLUNAS ACEITAS PARA FILTROS E ORDENAÇÃO:
     nome_completo,plano,estado,cidade,consumo_Gb,mensalidade,status,inadimplencia
@@ -44,27 +50,27 @@ def consultar_banco_dados(filtros: dict = {},
             raise ValueError (f'coluna {coluna} não permitida, use apenas as colunas permitidas: {colunas_permitidas}')
         
     query = 'SELECT * FROM chamados WHERE 1=1'
-    valor = []
+    valores = []
 
     for coluna,valor in filtros.items():
         if busca_parcial:
-            query+= f'AND {coluna} LIKE ?'
-            valor.append(f'%{valor}%')
+            query+= f' AND {coluna} LIKE ?'
+            valores.append(f'%{valor}%')
         else:
-            query+= f'AND {coluna}=?'
-            valor.append(str(valor))
+            query+= f' AND {coluna}=?'
+            valores.append(str(valor))
     
     if ordenar_por and ordenar_por in colunas_permitidas:
-        direcao = 'DESC' if ordem.upper() == 'DESC' else 'ASC'
-        query += f'ORDER BY {ordenar_por} {direcao}'
+        direcao = ' DESC' if ordem.upper() == 'DESC' else 'ASC'
+        query += f' ORDER BY {ordenar_por} {direcao}'
 
     if limite:
-        query += f'LIMIT {limite}'
+        query += f' LIMIT {limite}'
     else:
-        query += f'LIMIT 50'
+        query += f' LIMIT 50'
 
     with sqlite3.connect(caminho_db) as conexão:
         cursor = conexão.cursor()
-        cursor.execute(query,valor)
+        cursor.execute(query, valores)
         return cursor.fetchall()   
 
