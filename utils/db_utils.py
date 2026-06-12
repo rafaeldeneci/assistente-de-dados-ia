@@ -18,26 +18,34 @@ def criar_tabela_chamados():
                        id_registro INTEGER PRIMARY KEY AUTOINCREMENT,
                        nome_completo TEXT,
                        plano TEXT,
+                       estado TEXT,
                        cidade TEXT,
-                       consumo_gb INTEGER,
-                       status TEXT
+                       consumo_Gb INTEGER,
+                       mensalidade INTEGER,
+                       status TEXT,
+                       inadinplencia TEXT
                        );
                        
                        
-                       '''
-                       )
+                       ''')
         query_de_insercao = ''' INSERT INTO chamados(
           nome_completo,
           plano,
+          estado,
           cidade,
-          consumo_gb,
-          status)
+          consumo_Gb,
+          mensalidade,
+          status,
+          inadinplencia)
           VALUES(
           :nome_completo,
           :plano,
+          :estado,
           :cidade,
-          :consumo_gb,
-          :status)
+          :consumo_Gb,
+          :mensalidade,
+          :status,
+          :inadinplencia)
           '''
         cursor.executemany(query_de_insercao, ler_clientes())
         chamados.commit()

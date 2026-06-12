@@ -4,3 +4,4 @@ __pycache__/
 output/*.csv
 venv/
 .adk
+data/clientes.csv

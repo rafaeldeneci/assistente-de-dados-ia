@@ -12,12 +12,13 @@ from scripts.gerar_dados import gerar_massa_dados
 
 def rodar_sistema():
     print('[1/2] Gerando Clientes Automaticamente...')
-    gerar_massa_dados(quantia_clientes=50)
+    gerar_massa_dados(quantia_clientes=20000)
 
     print('[2/3] Rodando banco de dados...')
     print('[3/3] Rlimentando banco de dados com clientes gerados...')
     criar_tabela_chamados()
 
     print('***Banco de dados criado e Alimentado com sucesso!***')
-if __name__=='__main__':
- rodar_sistema()
+
+if __name__=='__main__': 
+    rodar_sistema()
