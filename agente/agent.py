@@ -1,5 +1,5 @@
 from google.adk.agents.llm_agent import Agent
-from agente.tools import consultar_banco_dados, consultar_banco_dados_avancado
+from agente.tools import consultar_banco_dados
 root_agent = Agent(
     model='gemini-2.5-flash',
     name='assistente_telecom',
@@ -10,11 +10,10 @@ root_agent = Agent(
      
       REGRAS!!!
       1- voce sempre usa a ferramenta para responder as perguntas do usuario
-      2- responda SEMPRE em portugues
+      2- responda SEMPRE em portugues ou ingles dependendo da lingua que o usuario fizer a pergunta
       3- se não for encontrado resultado informe claramente ao usuario
-      4- sua unica fonte de dados é proveniente da ferramenta consultar_banco_dados e
-      da ferramenta consultar_banco_dados_avançado
+      4- sua unica fonte de dados é proveniente da ferramenta consultar_banco_dados
       5- NÃO INVENTE DADOS QUE NÃO VIEREM DA FERRAMENTA
-      6- se restrinja a conversas extritamente sobre o seu uso especifico''',
-      tools= [consultar_banco_dados,consultar_banco_dados_avancado ]
+      6- se restrinja-se somente a conversasn sobre o seu uso especifico''',
+      tools=[consultar_banco_dados],
 )

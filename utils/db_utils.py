@@ -23,7 +23,7 @@ def criar_tabela_chamados():
                        consumo_Gb INTEGER,
                        mensalidade INTEGER,
                        status TEXT,
-                       inadinplencia TEXT
+                       inadimplencia TEXT
                        );
                        
                        
@@ -36,7 +36,7 @@ def criar_tabela_chamados():
           consumo_Gb,
           mensalidade,
           status,
-          inadinplencia)
+          inadimplencia)
           VALUES(
           :nome_completo,
           :plano,
@@ -45,7 +45,7 @@ def criar_tabela_chamados():
           :consumo_Gb,
           :mensalidade,
           :status,
-          :inadinplencia)
+          :inadimplencia)
           '''
         cursor.executemany(query_de_insercao, ler_clientes())
         chamados.commit()

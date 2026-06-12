@@ -76,7 +76,7 @@ def gerar_massa_dados(
                                 'consumo_Gb',
                                 'mensalidade',
                                 'status',
-                                'inadinplencia',
+                                'inadimplencia',
                                 ]
                                 )
         for cliente in range(1,quantia_clientes + 1):
@@ -94,7 +94,7 @@ def gerar_massa_dados(
             mensalidade = planos[plano_aleatorio]['mensalidade']
 
             status_aleatorio = random.choices(['ativo','inativo'],weights=[76,34])[0]
-            inadinplencia_aleatoria = random.choices(['sim','não'],weights=[27,74])[0]
+            inadimplencia_aleatoria = random.choices(['sim','não'],weights=[27,74])[0]
 
             
             escritor_nomes.writerow([nome_completo,
@@ -104,7 +104,7 @@ def gerar_massa_dados(
                                      consumo_total,
                                      mensalidade,
                                      status_aleatorio,
-                                     inadinplencia_aleatoria ])
+                                     inadimplencia_aleatoria ])
             
         
 

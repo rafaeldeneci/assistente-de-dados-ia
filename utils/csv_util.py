@@ -19,7 +19,7 @@ def ler_clientes():
                               'consumo_Gb':linha['consumo_Gb'],
                               'mensalidade':linha['mensalidade'],
                               'status':linha['status'],
-                              'inadinplencia':linha['inadinplencia'],
+                              'inadimplencia':linha['inadimplencia'],
                             })
     return clientes
 
