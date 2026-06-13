@@ -16,13 +16,13 @@ colunas_permitidas =  {'nome_completo',
                        }
 
 
-def consultar_banco_dados(filtros: dict = {},
+def consultar_banco_dados(filtros: dict = None,
                           ordenar_por: str = None,
                           ordem: str = 'ASC', 
                           limite: int = None,
                           busca_parcial: bool = False) -> list:
     
-
+    filtros = filtros or {}
     
     '''ferramenta definitiva para consulta de dados de clientes no banco de dados
     
@@ -61,7 +61,7 @@ def consultar_banco_dados(filtros: dict = {},
             valores.append(str(valor))
     
     if ordenar_por and ordenar_por in colunas_permitidas:
-        direcao = ' DESC' if ordem.upper() == 'DESC' else 'ASC'
+        direcao = 'DESC' if ordem.upper() == 'DESC' else 'ASC'
         query += f' ORDER BY {ordenar_por} {direcao}'
 
     if limite:
@@ -72,5 +72,8 @@ def consultar_banco_dados(filtros: dict = {},
     with sqlite3.connect(caminho_db) as conexão:
         cursor = conexão.cursor()
         cursor.execute(query, valores)
-        return cursor.fetchall()   
+        colunas = [desc[0]for desc in cursor.description]
+        rows = cursor.fetchall()
+        return[dict(zip(colunas,row))for row in rows]
+
 
