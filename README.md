@@ -14,6 +14,7 @@ Google ADK, Gemini e Streamlit.
 - Gemini
 - Streamlit
 - SQLite
+- Pandas
 
 ● Como rodar localmente:
 
